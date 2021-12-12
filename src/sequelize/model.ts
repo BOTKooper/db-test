@@ -1,8 +1,10 @@
 import {
   Column,
   DataType,
+  Index,
   Model,
   Table,
+  Unique,
 } from 'sequelize-typescript';
 
 export enum ActionType {
@@ -31,8 +33,8 @@ export class UserActionModel extends Model<UserActionModel> {
   /**
    * User which makes an Action. If Alfred makes a swipe with a like. His userId will be here
    */
-  // @Index
-  // @Unique(`user_action_userId_actUserId_unique`)
+  @Index
+  @Unique(`user_action_userId_actUserId_unique`)
   @Column({
     type: DataType.INTEGER,
     allowNull: false,
@@ -42,8 +44,8 @@ export class UserActionModel extends Model<UserActionModel> {
   /**
    * User who this operation performs on. If Alfred makes a swipe on Monica with a like. Monica's id will be here
    */
-  // @Index
-  // @Unique(`user_action_userId_actUserId_unique`)
+  @Index
+  @Unique(`user_action_userId_actUserId_unique`)
   @Column({
     type: DataType.INTEGER,
     allowNull: false,

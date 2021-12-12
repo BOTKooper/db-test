@@ -13,10 +13,12 @@ const ActionSchema = new Schema<IUserAction>({
   userId: {
     type: Number,
     required: true,
+    index: true,
   },
   actUserId: {
     type: Number,
     required: true,
+    index: true,
   },
   actionType: String,
   createdAt: {
