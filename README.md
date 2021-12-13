@@ -1,7 +1,33 @@
 # Test results
 
+## Time consumption (in ms)
 
-## Sequelize 
+```
+mongo {
+  avgBulkTime: 10.65,
+  avgSequentialTime: 0.4603503503503503,
+  medianSequentialTime: 0,
+  medianBulkTime: 9,
+  minSequentialTime: 0,
+  minBulkTime: 0,
+  maxSequentialTime: 526,
+  maxBulkTime: 7
+}
+seq {
+  avgBulkTime: 8.013,
+  avgSequentialTime: 2.1465921366911465,
+  medianSequentialTime: 2,
+  medianBulkTime: 8,
+  minSequentialTime: 1,
+  minBulkTime: 1,
+  maxSequentialTime: 99,
+  maxBulkTime: 6
+}
+```
+
+## Logs 
+
+### Sequelize 
 
 ```
 ❯ ts-node src/tests/sequelize.ts
@@ -18,7 +44,7 @@ mainTimer: 4:15.311 (m:ss.mmm)
 del: 87.495ms
 ```
 
-## Mongoose
+### Mongoose
 
 ```
 ❯ ts-node src/tests/mongo.ts
@@ -34,3 +60,5 @@ sequential:readAllLikesByUserId: 44.068s
 mainTimer: 1:42.602 (m:ss.mmm)
 del: 931.462ms
 ```
+
+

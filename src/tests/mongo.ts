@@ -49,12 +49,11 @@ const mongoTest = async () => {
     const bulkArr: Document[] = [];
     for(let actUserId = 0; actUserId < REACT_WITH_AMOUNT; actUserId++) {
       if(userId === actUserId) continue;
-      const tmp = new ActionModel({
+      bulkArr.push(new ActionModel({
         userId: userId,
         actUserId: actUserId,
         actionType: ActionType.LIKE
-      });
-      bulkArr.push(tmp)
+      }))
     }
     await ActionModel.insertMany(bulkArr);
     bulkTimes.push(Date.now());
